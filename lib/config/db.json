@@ -1,0 +1,17 @@
+{
+  "development": {
+    "database": "database_development",
+    "storage": "database.sqlite",
+    "dialect": "sqlite"
+  },
+  "test": {
+    "url": "...",
+    "dialect": "postgres"
+  },
+  "production": {
+    "url": {
+        "use_env_variable": "OPENSHIFT_POSTGRESQL_DB_URL"
+    },
+    "dialect": "postgres"
+  }
+}

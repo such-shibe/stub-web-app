@@ -1,0 +1,7 @@
+const path = require("path");
+
+module.exports = {
+  "config":          path.resolve("lib", "config", "db.json"),
+  "migrations-path": path.resolve("lib", "db", "migrate"),
+  "models-path": 	 path.resolve("lib", "db", "models")
+}
