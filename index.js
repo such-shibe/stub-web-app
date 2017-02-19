@@ -7,7 +7,7 @@ console.log("starting in '" + mode  + "' mode.");
 global.provide = name => require.main.require(locator.get(name));
 
 switch(mode) {
-    case: "live" :
+    case "live" :
           locator.register("config", "./lib/config/config-release");
           locator.register("cache", "./lib/cache/none"); // TODO replace with redis
           break;
@@ -22,4 +22,7 @@ switch(mode) {
           break;
 }
 
-require("./lib/server");
+const db = require("./lib/db/db")
+db.sequelize.sync().then(e => {
+    require("./lib/server");
+});
